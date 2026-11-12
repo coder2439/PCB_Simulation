@@ -94,7 +94,7 @@ export const PARTS: PartGroup[] = [
   { model: "redriver", iface: "usb3", items: [{ ...MUX_POS, ref: "U6" }] },
   { model: "pmic", iface: "power", items: [{ ...PMIC_POS, ref: "U7" }] },
   { model: "rj45", iface: "ethernet", items: [{ x: -55, z: -14.45, rot: 90, ref: "J1" }] },
-  { model: "hdmi", iface: "hdmi", items: [{ x: -59, z: 2, rot: 0, ref: "J2" }] },
+  { model: "hdmi", iface: "hdmi", items: [{ x: -57, z: 2, rot: 180, ref: "J2" }] },
   { model: "usbc", iface: "usb3", items: [{ x: -57.5, z: 21, rot: -90, ref: "J3" }] },
   { model: "fpc", iface: "mipi", items: [{ x: FPC_POS.x, z: FPC_POS.z, rot: 180, ref: "J4" }] },
   { model: "sma", iface: "coupon", items: [{ x: 62, z: 22, rot: 180, ref: "J6" }, { x: 62, z: 29, rot: 180, ref: "J7" }] },
