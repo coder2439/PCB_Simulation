@@ -19,7 +19,7 @@ export default function LabShell({
         <div className="mt-3 text-[15px] leading-relaxed text-[var(--muted)]">{intro}</div>
       </header>
       <div className="grid gap-5 lg:grid-cols-[320px_minmax(0,1fr)]">
-        <aside className="panel thin-scroll h-fit px-4 py-1 lg:sticky lg:top-[76px] lg:max-h-[calc(100vh-96px)] lg:overflow-y-auto">{controls}</aside>
+        <aside className="panel thin-scroll h-fit px-4 py-1 lg:sticky lg:top-[88px] lg:max-h-[calc(100vh-108px)] lg:overflow-y-auto">{controls}</aside>
         <div className="min-w-0 space-y-5">{children}</div>
       </div>
     </div>

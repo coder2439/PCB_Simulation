@@ -135,7 +135,7 @@ export default async function InterfacePage({ params }: PageProps<"/interfaces/[
           </section>
         </div>
 
-        <aside className="space-y-5 lg:sticky lg:top-[76px] lg:h-fit">
+        <aside className="space-y-5 lg:sticky lg:top-[88px] lg:h-fit">
           <SkewCalc uiPs={it.uiPs} color={it.color} />
           <div className="panel p-5">
             <h3 className="text-[15px] font-medium">On the reference board</h3>

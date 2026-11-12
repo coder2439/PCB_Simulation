@@ -9,11 +9,13 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   title: {
-    default: "SignalPath Lab — High-Speed PCB & SI/PI Mentorship",
+    default: "SignalPath Lab — High-Speed PCB & SI/PI Mentorship by Leonel Jalil Miranda",
     template: "%s · SignalPath Lab",
   },
   description:
     "Hands-on mentoring for high-speed PCB design: stackup, controlled impedance, PCIe, DDR4, USB 3.2, HDMI, Ethernet and MIPI CSI-2, SI/PI simulation, fabrication and lab validation on a real reference board.",
+  authors: [{ name: "Leonel Jalil Miranda" }],
+  creator: "Leonel Jalil Miranda",
   keywords: ["High-speed PCB", "Signal Integrity", "Power Integrity", "SI/PI", "PCIe", "DDR4", "USB 3.2", "HDMI", "MIPI CSI-2", "TDR", "VNA", "eye diagram", "PDN"],
   openGraph: {
     title: "SignalPath Lab — High-Speed PCB & SI/PI Mentorship",

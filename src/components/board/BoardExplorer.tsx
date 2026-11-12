@@ -63,7 +63,7 @@ export default function BoardExplorer() {
 
 
   return (
-    <div className="relative h-[calc(100dvh-60px)] min-h-[560px] w-full overflow-hidden bg-[radial-gradient(ellipse_at_50%_30%,#0d1622_0%,#05070b_70%)]">
+    <div className="relative h-[calc(100dvh-72px)] min-h-[560px] w-full overflow-hidden bg-[radial-gradient(ellipse_at_50%_30%,#0d1622_0%,#05070b_70%)]">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-50" />
       <div className={`absolute inset-0 transition-[right,bottom] duration-300 ${panelOpen ? "max-md:bottom-[min(46dvh,420px)] md:right-[440px]" : ""}`}>
         <BoardLazy mode="explorer" focus={focus} onSelect={select} xray={xray} exploded={exploded} showLabels={labels} showAll={showAll} />

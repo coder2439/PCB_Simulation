@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Logo, NAV } from "./nav";
+import { AUTHOR, Logo, NAV } from "./nav";
 
 export default function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-[var(--line)] bg-[var(--bg-2)]">
       <div className="container-x grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-sm">
-          <Logo />
+          <Logo size="md" />
           <p className="mt-3 text-[13.5px] leading-relaxed text-[var(--muted)]">
             A hands-on mentoring program for high-speed PCB design: stackup, routing, SI/PI simulation, fabrication and lab validation — taught on one reference board.
           </p>
@@ -31,7 +31,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-[var(--line)]">
         <div className="container-x flex h-12 items-center justify-between text-[12px] text-[var(--faint)]">
-          <span>HSD-REF-01 · demo prototype</span>
+          <span>Designed &amp; built by <span className="text-[var(--muted)]">{AUTHOR}</span> · HSD-REF-01 demo</span>
           <span className="mono">Next.js · three.js · WebGL</span>
         </div>
       </div>
