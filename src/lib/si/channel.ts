@@ -158,7 +158,7 @@ export function channelResponse(p: ChannelParams): FreqResult {
   return { f, hr, hi, s21db, s11db, delayNs: delay * 1e9 };
 }
 
-/** CTLE: DC attenuation = peaking; zero placed to restore HF gain, poles at Nyquist and 2.5× Nyquist. */
+/** CTLE: one zero, poles at Nyquist and 2.5× Nyquist; gain normalized to 0 dB at Nyquist. */
 function ctle(fr: number, fNyq: number, peakDb: number): C {
   if (peakDb <= 0) return [1, 0];
   const adc = Math.pow(10, -peakDb / 20);
@@ -166,7 +166,10 @@ function ctle(fr: number, fNyq: number, peakDb: number): C {
   const num: C = [1, fr / fz];
   const d1: C = [1, fr / fp1], d2: C = [1, fr / fp2];
   const h = cdiv(num, cmul(d1, d2));
-  return [h[0] * adc, h[1] * adc];
+  // normalize to 0 dB at Nyquist (peaking = DC attenuation relative to Nyquist)
+  const nn = cdiv([1, fNyq / fz], cmul([1, fNyq / fp1], [1, fNyq / fp2]));
+  const g = 1 / Math.hypot(nn[0], nn[1]);
+  return [h[0] * g, h[1] * g];
 }
 
 export interface PulseResult {
