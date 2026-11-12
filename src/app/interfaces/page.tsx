@@ -15,7 +15,7 @@ export default function InterfacesPage() {
         <span className="eyebrow">Interface library</span>
         <h1 className="mt-2 text-[34px] font-semibold leading-tight tracking-tight md:text-[44px]">From the electrical spec to layout rules.</h1>
         <p className="mt-4 text-[16px] leading-relaxed text-[var(--muted)]">
-          Each interface page connects the standard's electrical requirements to concrete rules on the reference board, the failures you'll see when they're broken, and how to simulate and measure them.
+          Each interface page connects the standard&apos;s electrical requirements to concrete rules on the reference board, the failures you&apos;ll see when they&apos;re broken, and how to simulate and measure them.
         </p>
       </header>
       <div className="mt-10 overflow-hidden rounded-2xl border border-[var(--line)]">

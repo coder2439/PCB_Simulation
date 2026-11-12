@@ -128,7 +128,7 @@ export default function TdrLab() {
       eyebrow="Lab 03 · Measurement"
       module="Module 5–6"
       title="TDR: seeing impedance in time"
-      intro={<p>A step travels down the channel and every impedance change reflects part of it back. Time on the display is round-trip time, so a feature 10 mm into a stripline shows up ≈ 130 ps after the launch. The instrument's rise time decides what you can and cannot see.</p>}
+      intro={<p>A step travels down the channel and every impedance change reflects part of it back. Time on the display is round-trip time, so a feature 10 mm into a stripline shows up ≈ 130 ps after the launch. The instrument&apos;s rise time decides what you can and cannot see.</p>}
       controls={controls}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">

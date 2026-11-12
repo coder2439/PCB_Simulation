@@ -45,6 +45,8 @@ export default function ChannelLab() {
   // adopt coefficients found by the auto-tuner once its result arrives
   useEffect(() => {
     if (data?.tuned && tuneTick > lastTuned) {
+      // adopting an async worker result is the intended use of this effect
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setEq((e) => ({ ...e, pre: data.eq.pre, post: data.eq.post, ctleDb: data.eq.ctleDb }));
       setLastTuned(tuneTick);
     }

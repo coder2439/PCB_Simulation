@@ -109,7 +109,7 @@ export default function CurriculumPage() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <div className="panel p-6">
-            <h3 className="flex items-center gap-2 text-[16px] font-medium"><HelpCircle size={18} className="text-[var(--power)]" /> Before the first session, I'll ask you</h3>
+            <h3 className="flex items-center gap-2 text-[16px] font-medium"><HelpCircle size={18} className="text-[var(--power)]" /> Before the first session, I&apos;ll ask you</h3>
             <ol className="mt-4 space-y-2.5">
               {DISCOVERY.map((q, i) => (
                 <li key={q} className="flex gap-3 text-[14px] text-[var(--muted)]"><span className="mono text-[12px] text-[var(--faint)]">{String(i + 1).padStart(2, "0")}</span>{q}</li>

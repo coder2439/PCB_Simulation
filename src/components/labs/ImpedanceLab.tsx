@@ -99,7 +99,7 @@ export default function ImpedanceLab() {
       eyebrow="Lab 01 · Stackup"
       module="Module 2"
       title="Stackup & controlled impedance"
-      intro={<p>Before a single trace is routed, the stackup and trace geometry must be agreed with the fabricator. This lab uses closed-form models — the same equations behind most online calculators — and shows why the final word belongs to a field solver and the fab's own modeling.</p>}
+      intro={<p>Before a single trace is routed, the stackup and trace geometry must be agreed with the fabricator. This lab uses closed-form models — the same equations behind most online calculators — and shows why the final word belongs to a field solver and the fab&apos;s own modeling.</p>}
       controls={controls}
     >
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4">

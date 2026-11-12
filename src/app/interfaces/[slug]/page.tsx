@@ -72,11 +72,11 @@ export default async function InterfacePage({ params }: PageProps<"/interfaces/[
                 </tbody>
               </table>
             </div>
-            <p className="mt-2 text-[12px] text-[var(--faint)]">Typical values for teaching; the current revision of the specification and the silicon vendor's design guide are always authoritative.</p>
+            <p className="mt-2 text-[12px] text-[var(--faint)]">Typical values for teaching; the current revision of the specification and the silicon vendor&apos;s design guide are always authoritative.</p>
           </section>
 
           <section>
-            <h2 className="text-[22px] font-semibold tracking-tight">Why it's hard</h2>
+            <h2 className="text-[22px] font-semibold tracking-tight">Why it&apos;s hard</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {it.challenges.map((c) => (
                 <li key={c} className="panel p-4 text-[14px] leading-relaxed text-[var(--muted)]">{c}</li>

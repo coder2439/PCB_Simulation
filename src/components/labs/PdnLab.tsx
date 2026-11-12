@@ -21,7 +21,7 @@ export default function PdnLab() {
   const [zoom, setZoom] = useState<"full" | "first">("full");
   const [rise, setRise] = useState(2);
 
-  const pp: PdnParams = { ...p, includePkg: view === "die" };
+  const pp: PdnParams = useMemo(() => ({ ...p, includePkg: view === "die" }), [p, view]);
   const zt = targetZ(pp);
   const sw = useMemo(() => sweep(pp, view), [pp, view]); // fast (< 2 ms)
   const swBoard = useMemo(() => (view === "die" ? sweep({ ...pp }, "board") : null), [pp, view]);

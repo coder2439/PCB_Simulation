@@ -10,7 +10,6 @@ export default function SiteHeader() {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => setOpen(false), [path]);
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 4);
     on();
@@ -44,11 +43,11 @@ export default function SiteHeader() {
       {open && (
         <nav className="container-x grid gap-1 pb-4 lg:hidden" aria-label="Mobile">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className={`rounded-lg px-3 py-2.5 text-[15px] ${active(n.href) ? "bg-white/[0.06] text-[var(--text)]" : "text-[var(--muted)]"}`}>
+            <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className={`rounded-lg px-3 py-2.5 text-[15px] ${active(n.href) ? "bg-white/[0.06] text-[var(--text)]" : "text-[var(--muted)]"}`}>
               {n.label}
             </Link>
           ))}
-          <Link href="/curriculum/#engagement" className="btn btn-primary mt-2 justify-center">Start mentoring</Link>
+          <Link href="/curriculum/#engagement" onClick={() => setOpen(false)} className="btn btn-primary mt-2 justify-center">Start mentoring</Link>
         </nav>
       )}
     </header>

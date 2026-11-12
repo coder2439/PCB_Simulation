@@ -93,7 +93,7 @@ export default function FabricationPage() {
 
       <section className="mt-16">
         <h2 className="text-[24px] font-semibold tracking-tight">Laminate choice: loss vs. cost</h2>
-        <p className="mt-2 max-w-3xl text-[14.5px] text-[var(--muted)]">Estimated attenuation of a 5 mil, 85 Ω stripline with RTF copper — the same model used in the channel lab. Representative values; use your laminate's construction-specific data.</p>
+        <p className="mt-2 max-w-3xl text-[14.5px] text-[var(--muted)]">Estimated attenuation of a 5 mil, 85 Ω stripline with RTF copper — the same model used in the channel lab. Representative values; use your laminate&apos;s construction-specific data.</p>
         <div className="mt-5 overflow-x-auto rounded-xl border border-[var(--line)]">
           <table className="w-full min-w-[720px] text-left text-[13.5px]">
             <thead className="bg-[var(--panel)] text-[11.5px] uppercase tracking-wider text-[var(--faint)]">
