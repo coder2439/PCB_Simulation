@@ -418,7 +418,7 @@ export const FOCI: Focus[] = [
   { id: "pcie", label: "PCIe Gen4 x4", target: [13, 0, 20], position: [22, 34, 62], anchor: [14, 2, 33] },
   { id: "ddr", label: "DDR4 fly-by", target: [34, 0, -10], position: [42, 38, -50], anchor: [36, 3, -14] },
   { id: "usb3", label: "USB 3.2 Type-C", target: [-38, 0, 18], position: [-70, 30, 48], anchor: [-46, 4, 21] },
-  { id: "hdmi", label: "HDMI 2.0", target: [-34, 0, 1], position: [-72, 32, 26], anchor: [-52, 9, 2] },
+  { id: "hdmi", label: "HDMI 2.0", target: [-36, 0, 2], position: [-82, 44, 44], anchor: [-55, 9, 2] },
   { id: "ethernet", label: "Gigabit Ethernet", target: [-40, 0, -17], position: [-80, 38, -40], anchor: [-52, 15, -18] },
   { id: "mipi", label: "MIPI CSI-2", target: [6, 0, -24], position: [6, 32, -66], anchor: [8, 3, -33] },
   { id: "power", label: "PDN & regulators", target: [42, 0, 6], position: [70, 40, 34], anchor: [42, 3, 12] },
