@@ -278,7 +278,7 @@ export interface EyeResult {
   vRange: number;            // ± volts shown
   heightMv: number;
   widthUi: number;
-  bestPhase: number;         // 0..1 within displayed center UI (0.5 = center)
+  sampleUi: number;          // best sampling phase, UI relative to the main cursor
   pdaMv: number;
   mainCursorMv: number;
 }
@@ -415,7 +415,7 @@ export function simulateEye(
     w: W, h: H, density, vRange: vMax,
     heightMv: Math.max(0, bestH) * 1000,
     widthUi: open / SPU,
-    bestPhase: (SPU + bestPh) / (2 * SPU),
+    sampleUi: (bestPh - SPU / 2) / SPU,
     pdaMv: pda * 1000,
     mainCursorMv: pe[peakIdx] * A * 1000,
   };

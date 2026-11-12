@@ -57,7 +57,7 @@ function computeChannel(req: Extract<WorkerRequest, { kind: "channel" }>) {
   const result = {
     f, s21, s11, ilNyq, delayNs: fr.delayNs,
     tUi, pRaw, pEq, cursors: curs,
-    eye, eq,
+    eye, eq, tuned: req.tune,
   };
   return { result, transfer: [f.buffer, s21.buffer, s11.buffer, tUi.buffer, pRaw.buffer, pEq.buffer, eye.density.buffer] };
 }

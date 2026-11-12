@@ -65,7 +65,8 @@ body {
   background: rgba(45, 212, 191, 0.3);
 }
 
-/* ---------- reusable primitives ---------- */
+/* ---------- reusable primitives (component layer so utilities can override) ---------- */
+@layer components {
 .container-x {
   width: 100%;
   max-width: 1240px;
@@ -152,6 +153,7 @@ body {
 .lesson p + p { margin-top: 0.8em; }
 .lesson strong { color: var(--text); font-weight: 600; }
 .lesson code { font-family: var(--font-geist-mono), monospace; font-size: 0.9em; color: var(--accent); }
+}
 
 /* range input */
 input[type="range"] {
