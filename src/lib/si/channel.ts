@@ -387,7 +387,9 @@ export function simulateEye(
 
   // density raster: 2 UI centred on the eye
   const density = new Float32Array(W * H);
-  const vMax = Math.max(A * 1.35, 0.05);
+  let peak = 0;
+  for (let n = startUi * SPU; n < endUi * SPU; n++) { const a = Math.abs(y[n]); if (a > peak) peak = a; }
+  const vMax = Math.max(Math.min(peak, A * 1.5) * 1.18, 0.02);
   const toRow = (v: number) => ((vMax - v) / (2 * vMax)) * (H - 1);
   const xs = (W - 1) / (2 * SPU);
   for (let i = startUi; i < endUi; i++) {

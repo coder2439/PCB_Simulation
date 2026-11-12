@@ -32,7 +32,7 @@ function buildLut() {
 }
 const LUT = typeof window !== "undefined" ? buildLut() : new Uint8ClampedArray(768);
 
-const M = { l: 54, r: 14, t: 14, b: 36 };
+const M = { l: 54, r: 30, t: 14, b: 36 };
 
 export default function EyeCanvas({ density, w, h, vRange, mask, sample, height = 340 }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
@@ -102,7 +102,7 @@ export default function EyeCanvas({ density, w, h, vRange, mask, sample, height 
       if (Math.abs(u * 2 - Math.round(u * 2)) < 1e-6) g.fillText(`${u > 0 ? "+" : ""}${u.toFixed(1)} UI`, x, M.t + ph + 7);
     }
     const vmv = vRange * 1000;
-    const step = vmv > 400 ? 200 : vmv > 200 ? 100 : vmv > 80 ? 50 : 20;
+    const step = vmv > 600 ? 200 : vmv > 250 ? 100 : vmv > 100 ? 50 : vmv > 40 ? 20 : 10;
     g.textAlign = "right";
     g.textBaseline = "middle";
     for (let mv = -Math.floor(vmv / step) * step; mv <= vmv; mv += step) {

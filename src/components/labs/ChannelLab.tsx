@@ -146,6 +146,13 @@ export default function ChannelLab() {
     </>
   );
 
+  const pulsePeak = useMemo(() => {
+    if (!data) return imp.swingMv / 2;
+    let m = 0;
+    for (let i = 0; i < data.pRaw.length; i++) m = Math.max(m, data.pRaw[i], data.pEq[i]);
+    return Math.max(10, (m * imp.swingMv) / 2);
+  }, [data, imp.swingMv]);
+
   const s21Min = useMemo(() => {
     if (!data) return -40;
     let m = 0;
@@ -229,7 +236,7 @@ export default function ChannelLab() {
                 { x: data.cursors.map((_, i) => i - 2), y: data.cursors.map((v) => v * imp.swingMv / 2), color: "#fbbf24", stems: true },
               ]}
               xDomain={[-3, 12]}
-              yDomain={[-0.15 * imp.swingMv / 2, 1.0 * imp.swingMv / 2]}
+              yDomain={[-0.18 * pulsePeak, 1.15 * pulsePeak]}
               xLabel="time relative to main cursor (UI)"
               yLabel="mV"
               xFmt={(v) => `${v}`}
