@@ -63,7 +63,7 @@ export default function FabricationPage() {
         </p>
       </header>
 
-      <section className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+      <section className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <div className="panel p-5">
           <div className="flex items-center justify-between">
             <h2 className="text-[17px] font-medium">HSD-REF-01 · 8-layer stackup</h2>
@@ -118,7 +118,7 @@ export default function FabricationPage() {
         </div>
       </section>
 
-      <section className="mt-16 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+      <section className="mt-16 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <div>
           <h2 className="flex items-center gap-2 text-[24px] font-semibold tracking-tight"><FileText size={20} className="text-[var(--accent)]" /> Fab notes (template)</h2>
           <p className="mt-2 text-[14.5px] text-[var(--muted)]">Specify requirements and let the fab choose the means. Ambiguity here is the most common reason a board doesn&apos;t match its simulation.</p>

@@ -32,7 +32,7 @@ export default function CurriculumPage() {
           {MODULES.map((m) => (
             <li key={m.n} className="relative grid gap-4 pl-12 md:pl-16">
               <span className="mono absolute left-0 top-5 flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line-2)] bg-[var(--panel)] text-[13px] text-[var(--accent)] md:h-12 md:w-12">{String(m.n).padStart(2, "0")}</span>
-              <article className="panel grid gap-5 p-5 md:grid-cols-[1.1fr_1fr] md:p-6">
+              <article className="panel grid gap-5 p-5 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:p-6">
                 <div>
                   <div className="flex flex-wrap items-center gap-2">
                     <h2 className="text-[19px] font-semibold tracking-tight">{m.title}</h2>
@@ -66,7 +66,7 @@ export default function CurriculumPage() {
         </ol>
       </section>
 
-      <section className="container-x mt-20 grid gap-6 lg:grid-cols-[1fr_1.2fr]">
+      <section className="container-x mt-20 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
         <div>
           <span className="eyebrow">Session format</span>
           <h2 className="mt-2 text-[26px] font-semibold tracking-tight">What a 90-minute session looks like</h2>
@@ -107,7 +107,7 @@ export default function CurriculumPage() {
           ))}
         </div>
 
-        <div className="mt-6 grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+        <div className="mt-6 grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
           <div className="panel p-6">
             <h3 className="flex items-center gap-2 text-[16px] font-medium"><HelpCircle size={18} className="text-[var(--power)]" /> Before the first session, I'll ask you</h3>
             <ol className="mt-4 space-y-2.5">

@@ -61,13 +61,23 @@ export default function BoardExplorer() {
     history.replaceState(null, "", `#${id}`);
   };
 
-  const cur = TOUR[step];
 
   return (
     <div className="relative h-[calc(100dvh-60px)] min-h-[560px] w-full overflow-hidden bg-[radial-gradient(ellipse_at_50%_30%,#0d1622_0%,#05070b_70%)]">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-50" />
-      <div className="absolute inset-0">
+      <div className={`absolute inset-0 transition-[right,bottom] duration-300 ${panelOpen ? "max-md:bottom-[min(46dvh,420px)] md:right-[440px]" : ""}`}>
         <BoardLazy mode="explorer" focus={focus} onSelect={select} xray={xray} exploded={exploded} showLabels={labels} showAll={showAll} />
+        {/* bottom toolbar */}
+        <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-xl border border-[var(--line)] bg-black/65 p-1 backdrop-blur-md md:bottom-5">
+          <ToolBtn on={xray} onClick={() => { setXray(!xray); setExploded(false); }} icon={<ScanLine size={15} />} label="X-ray" />
+          <ToolBtn on={exploded} onClick={() => { setExploded(!exploded); if (!exploded) setFocus("stackup"); else setFocus("overview"); }} icon={<Layers size={15} />} label="Stackup" />
+          <ToolBtn on={showAll} onClick={() => setShowAll(!showAll)} icon={<Sparkles size={15} />} label="All signals" />
+          <ToolBtn on={labels} onClick={() => setLabels(!labels)} icon={<Tags size={15} />} label="Labels" />
+          <ToolBtn on={false} onClick={() => { setFocus("overview"); setExploded(false); setXray(false); }} icon={<RotateCcw size={15} />} label="Reset" />
+        </div>
+        <p className="pointer-events-none absolute bottom-5 left-5 hidden text-[11.5px] text-[var(--faint)] 2xl:block">
+          Drag to orbit · right-drag to pan · scroll to zoom {mode === "tour" && <>· <span className="kbd">←</span> <span className="kbd">→</span> steps</>}
+        </p>
       </div>
 
       {/* top-left: mode switch + focus chips */}
@@ -95,15 +105,6 @@ export default function BoardExplorer() {
         )}
       </div>
 
-      {/* bottom toolbar */}
-      <div className="absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-xl border border-[var(--line)] bg-black/65 p-1 backdrop-blur-md md:bottom-5 max-md:bottom-[calc(min(46dvh,420px)+12px)]">
-        <ToolBtn on={xray} onClick={() => { setXray(!xray); setExploded(false); }} icon={<ScanLine size={15} />} label="X-ray" />
-        <ToolBtn on={exploded} onClick={() => { setExploded(!exploded); if (!exploded) setFocus("stackup"); else setFocus("overview"); }} icon={<Layers size={15} />} label="Stackup" />
-        <ToolBtn on={showAll} onClick={() => setShowAll(!showAll)} icon={<Sparkles size={15} />} label="All signals" />
-        <ToolBtn on={labels} onClick={() => setLabels(!labels)} icon={<Tags size={15} />} label="Labels" />
-        <ToolBtn on={false} onClick={() => { setFocus("overview"); setExploded(false); setXray(false); }} icon={<RotateCcw size={15} />} label="Reset" />
-      </div>
-
       {/* right panel / bottom sheet */}
       {panelOpen ? (
         <aside className="fade-up absolute inset-x-0 bottom-0 z-20 max-h-[min(46dvh,420px)] overflow-hidden rounded-t-2xl border border-[var(--line)] bg-[rgba(8,11,17,0.9)] backdrop-blur-xl md:inset-x-auto md:bottom-5 md:right-5 md:top-5 md:max-h-none md:w-[400px] md:rounded-2xl">
@@ -122,10 +123,7 @@ export default function BoardExplorer() {
         </button>
       )}
 
-      <p className="pointer-events-none absolute bottom-5 left-5 hidden text-[11.5px] text-[var(--faint)] lg:block">
-        Drag to orbit · right-drag to pan · scroll to zoom {mode === "tour" && <>· <span className="kbd">←</span> <span className="kbd">→</span> steps</>}
-      </p>
-      {cur && null}
+
     </div>
   );
 }

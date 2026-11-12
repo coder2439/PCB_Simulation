@@ -47,7 +47,7 @@ export default async function InterfacePage({ params }: PageProps<"/interfaces/[
               <Link href={it.labHint.href} className="btn btn-ghost"><Waves size={16} /> {it.labHint.label}</Link>
             </div>
           </div>
-          <div className="relative -mx-5 h-[340px] sm:h-[420px] lg:mx-0 lg:h-auto lg:min-h-[440px]">
+          <div className="relative mb-8 h-[340px] overflow-hidden rounded-2xl border border-[var(--line)] bg-[radial-gradient(ellipse_at_50%_40%,#0d1622,#05070b_75%)] sm:h-[420px] lg:mb-10 lg:h-auto lg:min-h-[440px]">
             <InterfaceBoard focus={it.slug} />
           </div>
         </div>

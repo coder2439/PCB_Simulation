@@ -155,7 +155,7 @@ function Scene({ mode, focus, onSelect, xray = false, exploded = false, showLabe
         {/* inner layers L2…L7 */}
         {(["L2", "L3", "L4", "L5", "L6", "L7"] as const).map((id, i) => (
           <group key={id} ref={(g) => { inner.current[i] = g; }} visible={false}>
-            {planes[id] && <PlaneSheet def={planes[id]} y={LAYER_Y[id]} opacity={0.9} />}
+            {planes[id] && <PlaneSheet def={planes[id]} y={LAYER_Y[id]} opacity={0.55} />}
             {(id === "L3" || id === "L6") && <TrackLayer layer={id} y={LAYER_Y[id]} material={innerMat} />}
             {exploded && <LayerLabel id={id} y={LAYER_Y[id]} />}
           </group>
@@ -180,7 +180,7 @@ function LayerLabel({ id, y }: { id: string; y: number }) {
     L2: "L2 · GND", L3: "L3 · Stripline signal", L4: "L4 · Power islands", L5: "L5 · GND", L6: "L6 · Stripline signal", L7: "L7 · GND",
   };
   return (
-    <Html position={[-66, y, -30]} center zIndexRange={[30, 0]}>
+    <Html position={[-64, y, 36]} center zIndexRange={[30, 0]}>
       <div className="pointer-events-none whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-2 py-1 font-mono text-[11px] text-slate-200 backdrop-blur">
         {label[id]}
       </div>
@@ -192,10 +192,7 @@ function StackLabels() {
   // L1 / L8 labels ride on the moving outer groups; approximated at final exploded positions
   return (
     <>
-      <Html position={[-66, explodedY(0, 1), -30]} center zIndexRange={[30, 0]}>
-        <div className="pointer-events-none whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-2 py-1 font-mono text-[11px] text-slate-200 backdrop-blur">L1 · Top signal + parts</div>
-      </Html>
-      <Html position={[-66, explodedY(7, 1), -30]} center zIndexRange={[30, 0]}>
+      <Html position={[-64, explodedY(7, 1), 36]} center zIndexRange={[30, 0]}>
         <div className="pointer-events-none whitespace-nowrap rounded-md border border-white/10 bg-black/70 px-2 py-1 font-mono text-[11px] text-slate-200 backdrop-blur">L8 · Bottom + BGA decaps</div>
       </Html>
     </>

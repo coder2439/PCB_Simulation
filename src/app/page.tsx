@@ -141,7 +141,7 @@ export default function Home() {
 
       {/* MENTORING FORMAT */}
       <section className="border-t border-[var(--line)] bg-[var(--bg-2)]">
-        <div className="container-x grid gap-12 py-20 lg:grid-cols-[1fr_1.1fr]">
+        <div className="container-x grid gap-12 py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
           <div>
             <span className="eyebrow">How the mentoring works</span>
             <h2 className="mt-2 text-[28px] font-semibold tracking-tight md:text-[36px]">Taught like a design review, not a lecture.</h2>

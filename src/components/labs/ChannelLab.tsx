@@ -251,7 +251,7 @@ export default function ChannelLab() {
         </ChartCard>
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <Experiments items={experiments} />
         <div className="space-y-5">
           <MentorNote title="How to read this">

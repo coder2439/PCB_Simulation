@@ -423,6 +423,6 @@ export const FOCI: Focus[] = [
   { id: "mipi", label: "MIPI CSI-2", target: [6, 0, -24], position: [6, 32, -66], anchor: [8, 3, -33] },
   { id: "power", label: "PDN & regulators", target: [42, 0, 6], position: [70, 40, 34], anchor: [42, 3, 12] },
   { id: "coupon", label: "TDR / VNA coupon", target: [48, 0, 25], position: [74, 22, 52], anchor: [60, 4, 25] },
-  { id: "stackup", label: "Stackup", target: [0, -14, 0], position: [-80, 30, 110] },
+  { id: "stackup", label: "Stackup", target: [0, 0, 0], position: [-125, 58, 178] },
   { id: "bottom", label: "Bottom side", target: [4, -1.6, -2], position: [8, -60, 52] },
 ];

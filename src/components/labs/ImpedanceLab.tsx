@@ -109,7 +109,7 @@ export default function ImpedanceLab() {
         <Stat label="Propagation delay" value={r.tpdPsPerIn.toFixed(0)} unit="ps/in" sub={`${(r.tpdPsPerIn / 25.4).toFixed(2)} ps/mm`} />
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.15fr_1fr]">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)]">
         <ChartCard title="Cross-section" sub={STRUCT_LABEL[g.structure] + (diff ? " · edge-coupled pair" : "")}>
           <CrossSection g={g} diff={diff} />
         </ChartCard>
@@ -135,7 +135,7 @@ export default function ImpedanceLab() {
         </ChartCard>
       </div>
 
-      <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <Experiments items={experiments} />
         <div className="space-y-5">
           <MentorNote>

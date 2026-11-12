@@ -25,7 +25,7 @@ export default function PdnLab() {
   const zt = targetZ(pp);
   const sw = useMemo(() => sweep(pp, view), [pp, view]); // fast (< 2 ms)
   const swBoard = useMemo(() => (view === "die" ? sweep({ ...pp }, "board") : null), [pp, view]);
-  const fMax = view === "die" ? 1e9 : 1e8;
+  const fMax = view === "die" ? 1e9 : 5e7;
   const viol = useMemo(() => {
     let worst = 0, fw = 0;
     for (let i = 0; i < sw.f.length; i++) {
@@ -36,7 +36,7 @@ export default function PdnLab() {
     return { worst, fw };
   }, [sw, zt, fMax]);
 
-  const req = { kind: "pdn" as const, p: pp, view, rise };
+  const req = { kind: "pdn" as const, p: { ...pp, includePkg: true }, view: "die" as const, rise };
   const { data: tr, busy } = useCompute<{ t: Float64Array; v: Float64Array; dt: number }>(req, JSON.stringify(req));
   const droop = useMemo(() => {
     if (!tr) return null;
@@ -134,7 +134,7 @@ export default function PdnLab() {
 
       <ChartCard
         title="Load-step response"
-        sub={`${p.stepA} A step at t = 0.5 µs with a ${rise} ns edge · tolerance band ±${tol.toFixed(1)} mV`}
+        sub={`voltage at the die · ${p.stepA} A step at t = 0.5 µs, ${rise} ns edge · tolerance ±${tol.toFixed(1)} mV`}
         right={
           <div className="flex items-center gap-2">
             {busy && <Loader2 size={15} className="animate-spin text-[var(--muted)]" />}
@@ -159,7 +159,7 @@ export default function PdnLab() {
         )}
       </ChartCard>
 
-      <div className="grid gap-5 xl:grid-cols-[1.1fr_1fr]">
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <Experiments items={experiments} />
         <div className="space-y-5">
           <MentorNote>

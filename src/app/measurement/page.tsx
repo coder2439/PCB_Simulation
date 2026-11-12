@@ -68,7 +68,7 @@ export default function MeasurementPage() {
         </ol>
       </section>
 
-      <section id="correlation" className="mt-16 grid scroll-mt-24 gap-6 lg:grid-cols-[1.25fr_1fr]">
+      <section id="correlation" className="mt-16 grid scroll-mt-24 gap-6 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
         <div>
           <h2 className="text-[24px] font-semibold tracking-tight">Correlation targets</h2>
           <p className="mt-2 text-[14.5px] text-[var(--muted)]">Rules of thumb used to decide whether a model is &quot;good enough&quot; — and where to look when it isn&apos;t.</p>
